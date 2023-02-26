@@ -1,22 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
 }
 
 .main-grid {
-  height: 100vh;
+  min-height: 100vh;
   display: grid;
   grid-template: max-content / 1fr 4fr;
 }
 
 .header {
   grid-column: 2 / 3;
-  padding: 1.5rem 3rem;
+  padding: 1.5rem 3rem 1rem;
   display: grid;
   align-items: center;
   gap: 1.3rem;
-  z-index: 0;
+  z-index: 1;
   box-shadow: 0 0 5px #5b5b5b;
 }
 
@@ -35,6 +38,7 @@
 .header > div:last-child > img:first-of-type {
   height: 3rem;
 }
+
 input[type="search"] {
   width: 95%;
   height: 100%;
@@ -60,7 +64,7 @@ input[type="search"] {
   gap: 1rem;
   padding: 1.5rem;
   background-color: #fff7ed;
-  z-index: -1;
+  z-index: 0;
 }
 
 .projects > div:first-of-type {
@@ -71,7 +75,11 @@ input[type="search"] {
 
 .card {
   border-radius: 10px;
-  padding: 1rem;
+  padding: 1.2rem;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
 }
 
 .card > .card-icons {
@@ -92,7 +100,6 @@ input[type="search"] {
 
 .card-body {
   margin: 10px 0;
-  font-size: 1rem;
 }
 
 .side-content {
@@ -110,7 +117,7 @@ input[type="search"] {
 .announcements > div:first-of-type {
   font-size: 0.9rem;
   border-radius: 10px;
-  padding: 0.9rem;
+  padding: 1rem;
   display: grid;
   gap: 1rem;
 }
@@ -124,7 +131,7 @@ input[type="search"] {
 .trending > div {
   font-size: 0.9rem;
   border-radius: 1rem;
-  padding: 10px;
+  padding: 1rem;
   display: grid;
   gap: 1rem;
 }
@@ -135,7 +142,7 @@ input[type="search"] {
   align-items: center;
 }
 
-.trending-user > img  {
+.trending-user > img {
   margin-right: 10px;
 }
 
@@ -198,7 +205,7 @@ form {
 .projects > p:first-of-type,
 .announcements > p:first-of-type,
 .trending > p:first-of-type {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin-bottom: 5px;
 }
 
@@ -210,10 +217,34 @@ form {
   font-size: 1.5rem;
 }
 
-
 .card,
 .announcements > div,
 .trending > div {
   background-color: white;
   box-shadow: 0 2px 5px -1px rgb(145, 145, 145);
+}
+
+.main-content p + p {
+  color: #5b5b5b;
+}
+
+button:hover,
+img:hover,
+.card-title:hover,
+.options > div,
+.announce-contents > div,
+.dashboard {
+  cursor: pointer;
+}
+
+.header > div:last-child > div ~ button:active {
+  background-color: blanchedalmond;
+  color: #5b5b5b;
+  position: relative;
+  top: 2px;
+  left: 2px;
+}
+
+.announce-contents > div:not(:last-of-type)::after {
+  content: "_______________________________";
 }
